@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @request.name %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @request.city %>
+</p>
+
+<p>
+  <strong>Sky:</strong>
+  <%= @request.sky %>
+</p>
+
+<p>
+  <strong>Postcode:</strong>
+  <%= @request.postcode %>
+</p>
+
+<p>
+  <strong>Temp:</strong>
+  <%= @request.temp %>
+</p>
+
+<%= link_to 'Edit', edit_request_path(@request) %> |
+<%= link_to 'Back', requests_path %>

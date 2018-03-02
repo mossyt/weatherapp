@@ -1,0 +1,76 @@
+<h1>Find your Weather!</h1>
+
+<!-- equivalent html code
+<form name="bidInput" action="auction_app/submit" method "post">
+	<div>
+	<p>Your Name: <input type="text" name="bidderInput"> </p>
+	<p>Your Bid: <input type="text" name="amountInput"> </p>
+	<p> <input type="submit" value="enter_bid"> </p>
+	</div>
+</form>
+-->
+
+
+
+<%= form_tag do%>
+	<p>Your Name: &emsp; <%= text_field_tag(:nameInput) %> </p>
+	<p>Your Location: <%= text_field_tag(:locationInput) %> </p>
+	<p> <%= submit_tag "Enter Location"%> </p>
+<% end %>
+
+<p>Hi <%= @allRequest.last.name.titleize %>! Your current weather in <%= @allRequest.last.city %> is <%= @allRequest.last.temp %> degrees celsius. The conditions outside are <%= @allRequest.last.sky.downcase %>.</p>
+
+<%=
+if @allRequest.last.sky == "Partly Cloudy"
+	image_tag "partlycloudy.png"
+elsif @allRequest.last.sky == "Sunny"
+	image_tag "sun.png"
+elsif @allRequest.last.sky == "Mostly Cloudy"
+	image_tag "mostlycloudy.png"
+elsif @allRequest.last.sky == "Cloudy"
+	image_tag "cloudy.png"
+elsif @allRequest.last.sky == "Snow"
+	image_tag "snow.jpg"
+elsif @allRequest.last.sky == "Breezy"
+	image_tag "breezy.png"
+elsif @allRequest.last.sky == "Rain"
+	image_tag "rain.jpg"
+elsif @allRequest.last.sky == "Windy"
+	image_tag "breezy.png"
+elsif @allRequest.last.sky == "Scattered Showers"
+	image_tag "rain.jpg"
+elsif @allRequest.last.sky == "Snow Showers"
+	image_tag "snow.jpg"
+else
+	image_tag "sun.png"
+end
+%>
+
+
+
+
+<!-- <p> Previous Weather Lookups </p>
+<table>
+	<thread>
+		<tr>
+			<th> Name </th>
+			<th> City </th>
+			<th> Temperature </th>
+			<th> Conditions </th>
+		</tr>
+	</thread>
+	<tbody>
+		<% @allRequest.reverse_each do |request| %>
+			<tr>
+				<td> <%= request.name %> </td>
+				<td> <%= request.city %> </td>
+				<td> <%= request.temp %> </td>
+				<td> <%= request.sky %> </td>
+				
+			</tr>
+		<% end %>
+	</tbody>
+</table> -->
+
+<!-- Another form on the same page:
+	Find the leader's name -->

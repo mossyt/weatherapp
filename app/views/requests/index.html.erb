@@ -1,0 +1,24 @@
+<h1> Previous Weather Requests</h1>
+<p><a href="http://localhost:3000/">Home</a></p>
+<table cellpadding="10px" cellspacing="0px">
+	<thread>
+		<tr>
+			<th> Name </th>
+			<th> City </th>
+			<th> Temperature </th>
+			<th> Conditions </th>
+		</tr>
+	</thread>
+
+	<tbody>
+		<% @allClimate.reverse_each do |request| %>
+			<tr>
+				<td> <%= request.name %> </td>
+				<td> <%= request.city %> </td>
+				<td> <%= request.temp %> °C </td>
+				<td> <%= request.sky %> </td>
+				
+			</tr>
+		<% end %>
+	</tbody>
+</table>

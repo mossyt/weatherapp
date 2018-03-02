@@ -1,0 +1,78 @@
+body {
+	font-family: bold ;
+	font-style: normal;
+	margin-left: auto;
+	color: Blue;
+	margin-right: auto;
+	font-size: 20pt;
+	width: 1200px;
+    background: url(WEATHER.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.main_container { 
+    width: 100%; 
+    position: relative; 
+    float: left; 
+} 
+
+
+a {
+	text-decoration: none;
+}
+h2 {
+    color: DarkBlue;
+    margin-left: 40px;
+}
+
+.links { 
+    width: 90%; 
+    position: relative; 
+    float: left; 
+} 
+ 
+.login { 
+    color: Blue;
+    width: 10%; 
+    position: relative; 
+    float: left; 
+}  
+.users { 
+    color: Blue;
+    width: 60%; 
+    padding-left: 10%; 
+    padding-right: 10%;
+    position: relative; 
+    float: left; 
+} 
+ 
+.user, .table_header { 
+    color: Blue;
+    width: 100%; 
+    position: relative; 
+    float: left; 
+    padding-top: 5px; 
+    padding-bottom: 5px; 
+} 
+ 
+.table_cell { 
+    color: Blue;
+    position: relative; 
+    float: left; 
+    width: 25%; 
+} 
+ 
+header { 
+    color: Blue;
+    width: 100%; 
+    position: relative; 
+    float: left; 
+    font-size: 18pt;
+    color: white;
+    }
+
+
+
