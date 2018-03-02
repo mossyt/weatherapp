@@ -18,6 +18,8 @@ class WeatherController < ApplicationController
 	postcode = "0000000"
 	@temp = @response.condition.temp.to_s
 	@sky = @response.condition.text
+
+	
 	#responds_to do |format|
 	#flash[:success] = 'Todo was successfully created.'
 	#format.html { redirect_to weather_url}

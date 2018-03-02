@@ -54,6 +54,9 @@ end
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'autoprefixer-rails'
 gem 'bootstrap_jt'
+gem 'bootstrap', '~> 4.0.0.alpha3'
+gem 'gmaps4rails'
+gem 'twitter'
 
 gem 'figaro'
 gem 'geocoder'

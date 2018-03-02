@@ -3,6 +3,7 @@
   get '/about' => 'pages#about'
   get '/contact' => 'pages#contact'
   get "weather" => "weather#index"
+  get '/twitter' => 'pages#twitter'
   get "/searchs" => "searchs#index"
   get "/" => "weather#index"
   post "/" => "weather#enterPostcode"

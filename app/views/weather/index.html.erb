@@ -1,14 +1,53 @@
-<h1>Find your Weather!</h1>
+<div class="center jumbotron">
+<br />
+<br />
+<br />
+<br />
+<br />
+ <h1>Welcome to WeatherGo</h1>
+
+  <h2>   This is our App you check the current weather of any city in the world  </h2>
+
+
+<h1>Check Weather Anyhwere</h1>
 
 
 <%= form_tag do%>
 	<p>Your Name: <%= text_field_tag(:nameInput) %> </p>
 	<p>Your City: &nbsp; &nbsp;<%= text_field_tag(:locationInput) %> </p>
 	<p> <%= submit_tag "Enter Location"%>   <input type="button" value="Cancel" /> </p>
-	
+
 <% end %>
 
-<p>Hi <%= @allRequest.last.name.titleize %>! Your current weather in <%= @allRequest.last.city %> is <%= @allRequest.last.temp %> degrees celsius. The conditions outside are <%= @allRequest.last.sky.downcase %>.</p>
+<p><%= @allRequest.last.name.titleize %> The current weather in <%= @allRequest.last.city %> is <%= @allRequest.last.temp %> degrees celsius. The conditions outside are <%= @allRequest.last.sky.downcase %>.</p>
+
+<%= if @allRequest.last.sky == "Partly cloudy"
+link_to image_tag "partlycloudy.jpg"
+elsif @allRequest.last.sky == "Sunny"
+	link_to image_tag "sun.png"
+elsif @allRequest.last.sky == "Mostly Cloudy"
+	link_to image_tag"mostlycloudy.jpg"
+elsif @allRequest.last.sky == "Cloudy"
+	link_to image_tag "cloudy.jpg"
+elsif @allRequest.last.sky == "Snow"
+	link_to image_tag "snow.png"
+elsif @allRequest.last.sky == "Breezy"
+	link_to image_tag "breezy.png"
+elsif @allRequest.last.sky == "Rain"
+	link_to image_tag "rain.png"
+elsif @allRequest.last.sky == "Rain And Snow"
+	link_to image_tag "rain.png"	
+elsif @allRequest.last.sky == "Windy"
+	link_to image_tag "breezy.png"
+elsif @allRequest.last.sky == "Scattered Showers"
+	link_to image_tag "rain.png"
+elsif @allRequest.last.sky == "Snow Showers"
+	link_to image_tag "snow.png"
+else
+	link_to image_tag "sun.png"
+end
+%>
+
 
 
 

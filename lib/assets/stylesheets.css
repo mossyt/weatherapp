@@ -8,3 +8,7 @@
   padding-top: 9px;
   font-weight: bold;
 }
+logo:hover {
+  color: #fff;
+  text-decoration: none;
+}

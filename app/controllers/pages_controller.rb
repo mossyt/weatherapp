@@ -4,4 +4,7 @@ class PagesController < ActionController::Base
   
   def contact
   end  
+  
+  def twitter
+  end  
 end
