@@ -1,10 +1,8 @@
-#Rails.application.routes.draw do
- # resources :requests
   Rails.application.routes.draw do
   root "weather#index"
-  #get 'weather_app/index'
+  get '/about' => 'pages#about'
+  get '/contact' => 'pages#contact'
   get "weather" => "weather#index"
-  # get "/previous" => "public/previous.html.erb"
   get "/searchs" => "searchs#index"
   get "/" => "weather#index"
   post "/" => "weather#enterPostcode"

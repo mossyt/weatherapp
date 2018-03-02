@@ -7,8 +7,7 @@ class WeatherController < ApplicationController
 	puts "--------------- In Index -----------------"
 	@allRequest = Request.all
 	puts "# of bids = #{@allRequest.size}"
-	#@allClimate = @allClimate.sort_by {|climate| [climate.name, climate.temperature]}
-
+	
   end
 
   def enterPostcode
@@ -19,7 +18,10 @@ class WeatherController < ApplicationController
 	postcode = "0000000"
 	@temp = @response.condition.temp.to_s
 	@sky = @response.condition.text
-
+	#responds_to do |format|
+	#flash[:success] = 'Todo was successfully created.'
+	#format.html { redirect_to weather_url}
+#end
 	map = {"name" => @name, "postcode" => postcode, "city" => @city, "temp" => @temp, "sky" => @sky}
 	newRow = Request.new(map)
 	respond_to do |format|
@@ -32,17 +34,7 @@ class WeatherController < ApplicationController
 	end
   end
 
-  # def getLeader
-  # 	puts "--------------- In Get Leader -----------------"
-  # 	# Need to sort again, because every request creates
-  # 	# a new instance of Controller class (why?)
-  # 	@allBids = Bid.all
-  # 	@allBids = @allBids.sort_by {|bid| [-bid.amount,bid.bidder]}
-  # 	puts "Leader: #{@allBids[0].bidder}"
-  # 	respond_to do |format|
-  # 		format.html {redirect_to auction_app_url}
-  # 	end
-  # end
+ 
 
   def handlePost
   	if params[:commit] == "Enter Info"
