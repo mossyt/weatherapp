@@ -16,7 +16,7 @@
 	<p>Your Name: <%= text_field_tag(:nameInput) %> </p>
 	<p>Your City: &nbsp; &nbsp;<%= text_field_tag(:locationInput) %> </p>
 	<p> <%= submit_tag "Enter Location"%>   <input type="button" value="Cancel" /> </p>
-
+	
 <% end %>
 
 <p><%= @allRequest.last.name.titleize %> The current weather in <%= @allRequest.last.city %> is <%= @allRequest.last.temp %> degrees celsius. The conditions outside are <%= @allRequest.last.sky.downcase %>.</p>
@@ -48,9 +48,8 @@ else
 end
 %>
 
-
-
-
+<%= image_tag "http://maps.googleapis.com/maps/api/staticmap?center=#{@allRequest.last.city}&markers=#{@allRequest.last.city}&zoom=9&size=640x400&key=AIzaSyA4BHW3txEdqfxzdTlPwaHsYRSZbfeIcd8",
+              class: 'img-fluid img-rounded', alt: "#{@allRequest.last.city} on the map"%>
 
 
 

@@ -19,11 +19,6 @@ class WeatherController < ApplicationController
 	@temp = @response.condition.temp.to_s
 	@sky = @response.condition.text
 
-	
-	#responds_to do |format|
-	#flash[:success] = 'Todo was successfully created.'
-	#format.html { redirect_to weather_url}
-#end
 	map = {"name" => @name, "postcode" => postcode, "city" => @city, "temp" => @temp, "sky" => @sky}
 	newRow = Request.new(map)
 	respond_to do |format|
